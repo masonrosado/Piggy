@@ -62,16 +62,13 @@ class Piggy(PiggyParent):
         
         self.right(primary=50, counter=-50)
         time.sleep(2)
-        self.stop
+        self.stop()
        
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         pass
 
-    def boogie(self):
-        self.deg_fwd(720)
-        self.stop()
 
     def example_move(self):
         """this is an example dance move that should be replaced by student-created content"""
