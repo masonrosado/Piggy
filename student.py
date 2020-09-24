@@ -62,10 +62,10 @@ class Piggy(PiggyParent):
         
         
         #spinning start (left, right)
-        self.right(primary=100, counter=-100)
+        self.right(primary=90, counter=-90)
         time.sleep(5)
         self.stop()
-        self.left(primary=100, counter=-100)
+        self.left(primary=90, counter=-90)
         time.sleep(5)
         self.stop()
         #forward/back
