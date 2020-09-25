@@ -65,28 +65,28 @@ class Piggy(PiggyParent):
         self.break_neck()
         
         #spin both ways
-        def spin_dizzy(self):
-            self.right(primary=90, counter=-90)
-            time.sleep(4)
-            self.stop()
-            self.left(primary=90, counter=-90)
-            time.sleep(4)
-            self.stop()
-        
-        #forward/back
-        def for_back(self):
-            self.fwd()
-            time.sleep(3)
-            self.stop()
-            self.back()
-            time.sleep(3)
-            self.stop()
+    def spin_dizzy(self):
+        self.right(primary=90, counter=-90)
+        time.sleep(4)
+        self.stop()
+        self.left(primary=90, counter=-90)
+        time.sleep(4)
+        self.stop()
+    
+    #forward/back
+    def for_back(self):
+        self.fwd()
+        time.sleep(3)
+        self.stop()
+        self.back()
+        time.sleep(3)
+        self.stop()
 
-        #look left/right
-        def break_neck(self):
-             self.servo(1000) 
-             time.sleep(1) 
-             self.servo(2000)   
+    #look left/right
+    def break_neck(self):
+        self.servo(1000) 
+        time.sleep(1) 
+        self.servo(2000)   
        
 
     def safe_to_dance(self):
