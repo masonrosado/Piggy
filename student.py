@@ -91,10 +91,11 @@ class Piggy(PiggyParent):
 
     #S-shape 
     def swiggly(self):
-        self.fwd(left=80, right=60)
+        self.fwd(left=90, right=45)
         time.sleep(1)
-        self.fwd(left=30, right=90)
+        self.fwd(left=45, right=90)
         time.sleep(1)
+        self.stop()
     
         
        
