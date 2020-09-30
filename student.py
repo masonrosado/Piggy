@@ -93,11 +93,12 @@ class Piggy(PiggyParent):
     def swiggly(self):
         self.fwd(left=90, right=45)
         time.sleep(1)
-        self.fwd(left=45, right=90)
+        self.fwd(left=90, right=180)
         time.sleep(1)
-        self.fwd(left=90, right=45)
+        self.fwd(left=180, right=90)
         time.sleep(1)
         self.fwd(left=45, right=90)
+        self.fwd(2)
         time.sleep(1)
         self.stop()
        
