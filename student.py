@@ -62,8 +62,8 @@ class Piggy(PiggyParent):
         
         #self.spin_dizzy()
         #self.for_back()
-        self.break_neck()
-        #self.swiggly()
+        #self.break_neck()
+        self.swiggly()
         
         #spin both ways
     def spin_dizzy(self):
