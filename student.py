@@ -66,7 +66,7 @@ class Piggy(PiggyParent):
         self.break_neck()
         self.swiggly()
         self.break_neck()
-        self.skipp
+        self.skipp()
         
         
         #spin both ways
