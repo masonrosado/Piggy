@@ -63,7 +63,9 @@ class Piggy(PiggyParent):
         #self.spin_dizzy()
         #self.for_back()
         #self.break_neck()
-        self.swiggly()
+        #self.swiggly()
+        #self.break_neck()
+        self.swiggly_reverse()
         
         #spin both ways
     def spin_dizzy(self):
@@ -100,10 +102,18 @@ class Piggy(PiggyParent):
         self.fwd(left=45, right=90)
         time.sleep(1)
         self.stop()
-        self.fwd(2)
-        #time.sleep(1)
-        self.stop()
-       
+        
+    #S-shape backward
+    def swiggly_reverse(self) 
+    self.back(left=45, right=90)   
+    time.sleep(1)
+    self.back(left=90,right=45)
+    time.sleep(1)
+    self.back(left=90,right=45)
+    time.sleep(1)
+    self.back(left=45, right=90) 
+    time.sleep(1)
+    self.stop()
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
