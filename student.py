@@ -89,7 +89,7 @@ class Piggy(PiggyParent):
         time.sleep(1) 
         self.servo(2000) 
 
-    #S-shape 
+    #S-shape forward
     def swiggly(self):
         self.fwd(left=90, right=45)
         time.sleep(1)
@@ -99,7 +99,8 @@ class Piggy(PiggyParent):
         time.sleep(1)
         self.fwd(left=45, right=90)
         time.sleep(1)
-        #self.fwd(2)
+        self.stop
+        self.fwd(2)
         #time.sleep(1)
         self.stop()
        
