@@ -89,7 +89,10 @@ class Piggy(PiggyParent):
     def break_neck(self):
         self.servo(1000) 
         time.sleep(1) 
-        self.servo(2000) 
+        self.servo(2000)
+        time.sleep(1) 
+        self.servo(1000)
+        self.stop()
 
     #S-shape forward
     def swiggly(self):
@@ -103,7 +106,14 @@ class Piggy(PiggyParent):
         time.sleep(1)
         self.stop()
         
-    
+    #Quinn Shuffle from discord
+    def shuffle(self):    
+        for x in range(12):
+            self.right(primary=-60, counter=0)
+            time.sleep(.1)
+            self.left(primary=-60, counter=0)
+            time.sleep(.1)
+        self.stop()
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
