@@ -96,11 +96,11 @@ class Piggy(PiggyParent):
         self.fwd(left=45, right=90)
         time.sleep(1)
         self.fwd(left=90, right=45)
-        time.sleep(2)
+        time.sleep(1)
         self.fwd(left=45, right=90)
         time.sleep(1)
-        self.fwd(2)
-        time.sleep(1)
+        #self.fwd(2)
+        #time.sleep(1)
         self.stop()
        
 
