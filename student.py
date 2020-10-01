@@ -61,12 +61,13 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         self.shuffle()
+        self.skipp()
         self.spin_dizzy()
         self.for_back()
         self.break_neck()
         self.swiggly()
         self.break_neck()
-        self.skipp()
+        
         
         
         #spin both ways
@@ -81,10 +82,10 @@ class Piggy(PiggyParent):
     #forward/back
     def for_back(self):
         self.fwd()
-        time.sleep(3)
+        time.sleep(2)
         self.stop()
         self.back()
-        time.sleep(3)
+        time.sleep(2)
         self.stop()
 
     #look left/right
@@ -93,7 +94,7 @@ class Piggy(PiggyParent):
         time.sleep(1) 
         self.servo(2000)
         time.sleep(1) 
-        self.servo(1000)
+        self.servo(1500)
         self.stop()
 
     #S-shape 
