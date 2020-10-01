@@ -66,6 +66,7 @@ class Piggy(PiggyParent):
         self.break_neck()
         self.swiggly()
         self.break_neck()
+        self.skipp
         
         
         #spin both ways
@@ -95,7 +96,7 @@ class Piggy(PiggyParent):
         self.servo(1000)
         self.stop()
 
-    #S-shape forward
+    #S-shape 
     def swiggly(self):
         self.fwd(left=90, right=45)
         time.sleep(1)
@@ -115,6 +116,20 @@ class Piggy(PiggyParent):
             self.left(primary=-60, counter=0)
             time.sleep(.1)
         self.stop()
+
+    #Brennan's skipp move
+    def skipp(self):
+        for x in range(4):
+            self.fwd(right=100, left=100)
+            time.sleep(.5)
+            self.servo(1000)
+            time.sleep(.1)
+            self.servo(2000)
+            time.sleep(.1)
+            self.fwd(right=-100, left=-100)
+            time.sleep(.1)
+            self.servo(-1000)
+            self.stop()
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
