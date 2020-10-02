@@ -58,22 +58,23 @@ class Piggy(PiggyParent):
 
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
-        # TODO: check to see if it's safe before dancing
+        if not self.safe_to_dance():
+            return False #shutdown
+        for x in range(2):  
+            self.shuffle()
+            self.skipp()
+            self.spin_dizzy()
+            self.for_back()
+            self.break_neck()
+            self.swiggly()
+            self.break_neck()
+            self.backward_shimmey()
         
-      for x in range(2)  
-        self.shuffle()
-        self.skipp()
-        self.spin_dizzy()
-        self.for_back()
-        self.break_neck()
-        self.swiggly()
-        self.break_neck()
-        self.backward_shimmey()
         
         
         
-        #spin both ways
     def spin_dizzy(self):
+        """"spin both ways"""
         self.right(primary=90, counter=-90)
         time.sleep(4)
         self.stop()
@@ -81,8 +82,9 @@ class Piggy(PiggyParent):
         time.sleep(4)
         self.stop()
     
-    #forward/back
+    
     def for_back(self):
+        """forward/back"""
         self.fwd()
         time.sleep(2)
         self.stop()
@@ -90,8 +92,9 @@ class Piggy(PiggyParent):
         time.sleep(2)
         self.stop()
 
-    #look left/right
+    
     def break_neck(self):
+        """look left/right"""
         self.servo(1000) 
         time.sleep(1) 
         self.servo(2000)
@@ -99,8 +102,9 @@ class Piggy(PiggyParent):
         self.servo(1500)
         self.stop()
 
-    #S-shape 
+    
     def swiggly(self):
+        """S-shape"""
         self.fwd(left=90, right=45)
         time.sleep(1)
         self.fwd(left=45, right=90)
@@ -113,8 +117,9 @@ class Piggy(PiggyParent):
         time.sleep(.25)
         self.stop()
         
-    #Quinn Shuffle from discord
-    def shuffle(self):    
+    
+    def shuffle(self): 
+        """Quinn Shuffle from discord"""   
         for x in range(12):
             self.right(primary=-60, counter=0)
             time.sleep(.1)
@@ -122,8 +127,9 @@ class Piggy(PiggyParent):
             time.sleep(.1)
         self.stop()
 
-    #Brennan's skipp move from discord
+    
     def skipp(self):
+        """Brennan's skipp move from discord"""
         for x in range(4):
             self.fwd(right=100, left=100)
             time.sleep(.5)
@@ -136,8 +142,9 @@ class Piggy(PiggyParent):
             self.servo(-1000)
             self.stop()
 
-    #Haydn's backward shimmey from discord
+   
     def backward_shimmey(self):
+        """Haydn's backward shimmey from discord"""
         for x in range(6):
             self.right(primary=-70, counter=-30)
             time.sleep(.5)
@@ -147,7 +154,16 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        pass
+        #check for all fil/early-termination conditions
+        for _ in range(4):
+            if self.read_distance() < 300:
+                print("not safe to dance!")
+                return False
+            else:
+                self.turn_by_deg(90)
+        #after all checks have been done, we deduce its safe to dance
+        print("Dance on!")
+        return True
 
 
     def example_move(self):
