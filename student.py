@@ -60,13 +60,13 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         
-        self.shuffle()
-        self.skipp()
-        self.spin_dizzy()
-        self.for_back()
-        self.break_neck()
+        #self.shuffle()
+       # self.skipp()
+        #self.spin_dizzy()
+        #self.for_back()
+        #self.break_neck()
         self.swiggly()
-        self.break_neck()
+        #self.break_neck()
         
         
         
@@ -107,6 +107,8 @@ class Piggy(PiggyParent):
         time.sleep(1)
         self.fwd(left=45, right=90)
         time.sleep(1)
+        self.fwd(left=45, right=0)
+        time.sleep(1)
         self.stop()
         
     #Quinn Shuffle from discord
@@ -118,7 +120,7 @@ class Piggy(PiggyParent):
             time.sleep(.1)
         self.stop()
 
-    #Brennan's skipp move
+    #Brennan's skipp move from discord
     def skipp(self):
         for x in range(4):
             self.fwd(right=100, left=100)
