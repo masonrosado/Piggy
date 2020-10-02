@@ -60,13 +60,14 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         
-        #self.shuffle()
-       # self.skipp()
-        #self.spin_dizzy()
-        #self.for_back()
-        #self.break_neck()
+        self.shuffle()
+        self.skipp()
+        self.spin_dizzy()
+        self.for_back()
+        self.break_neck()
         self.swiggly()
-        #self.break_neck()
+        self.break_neck()
+        self.backward_shimmey()
         
         
         
@@ -133,6 +134,15 @@ class Piggy(PiggyParent):
             time.sleep(.1)
             self.servo(-1000)
             self.stop()
+
+    #Haydn's backward shimmey from discord
+    def backward_shimmey(self):
+        for x in range(6):
+            self.right(primary=-70, counter=-30)
+            time.sleep(.5)
+            self.left(primary=-70, counter=-30)
+            time.sleep(.5)
+        self.stop()
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
