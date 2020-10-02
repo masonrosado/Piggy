@@ -108,7 +108,7 @@ class Piggy(PiggyParent):
         self.fwd(left=45, right=90)
         time.sleep(1)
         self.fwd(left=45, right=0)
-        time.sleep(1)
+        time.sleep(.5)
         self.stop()
         
     #Quinn Shuffle from discord
