@@ -197,13 +197,13 @@ class Piggy(PiggyParent):
         self.fwd()
         while True:
             if self.read_distance() > self.SAFE_DISTANCE:
-            self.stop()
-            print("There's a body in the road...") 
-            self.turn_by_deg(90)
-            time.sleep(.1)
-        else:
-            self.fwd()
-            time.sleep(.01)
+                self.stop()
+                print("There's a body in the road...") 
+                self.turn_by_deg(90)
+                time.sleep(.1)
+            else:
+                self.fwd()
+                time.sleep(.01)
         self.stop()
         # TODO: scan so we can decide left or right
         # TODO: average the right side of the scan dict
