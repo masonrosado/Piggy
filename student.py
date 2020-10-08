@@ -189,7 +189,7 @@ class Piggy(PiggyParent):
         #scan area in front of robot
         self.scan()
         #sort the scan data for easier analysis
-        self.scan_data = OrderedDict(sorted(self.scan_data.items)))
+        self.scan_data = OrderedDict(sorted(self.scan_data.items))
         #print results
         for angle in self.scan_data:
             dist = self.scan_data[angle]
