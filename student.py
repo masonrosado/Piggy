@@ -203,7 +203,7 @@ class Piggy(PiggyParent):
                 see_an_object = True
                 count += 1
                 print(" There's a body in the road")
-                elif dist > self.SAFE_DISTANCE and see_an_object:
+            elif dist > self.SAFE_DISTANCE and see_an_object:
                     see_an_object = False
                     print("All clear")
             print("ANGLE: %d | DIST: %d" % (angle, dist))
