@@ -184,7 +184,7 @@ class Piggy(PiggyParent):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
         #sort the scan data for easier analysis
-        self.scan_data = OrderedDict(sorted(self.scan_data.items))
+        self.scan_data = OrderedDict(sorted(self.scan_data.items()))
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         #scan area in front of robot
