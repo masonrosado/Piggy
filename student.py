@@ -258,7 +258,7 @@ class Piggy(PiggyParent):
                 self.stop()
                 #backing up
                 self.back()
-                self.sleep(.75)
+                time.sleep(.75)
                 self.stop()
                 #self.turn_until_clear()
                 if 'l' in self.right_or_left():
