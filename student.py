@@ -191,30 +191,23 @@ class Piggy(PiggyParent):
             Returns a 'r' or 'l' based on scan data"""
         self.scan()
 
-        right_sum = 0
-        right_avg = 0
-        left_sum = 0
-        left_avg = 0
+        max = 0
+        side = 'l'
 
         #analyze scan results
         for angle in self.scan_data:
-        #average up the distances on the right side
+        #RIGHT SIDE
             if angle < self.MIDPOINT:
-                right_sum+= self.scan_data[angle]
-                right_avg += 1
+                if self.scan_data[angle] > max:
+                    max = self.scan_data[angle]
+                    side = 'r'
+            #LEFT SIDE
             else:
-                left_sum +=self.scan_data[angle]
-                left_avg += 1
+                if self.scan_data[angle] > max:
+                    max = self.scan_data[angle]
+                    side = 'l'
 
-        #calculate averages
-        left_avg = left_sum / left_avg
-        right_avg = right_sum / right_avg
-
-        if left_avg > right_avg:
-            return 'l'
-        else:
-            return 'r'
-        
+        return side
             
     
     
@@ -223,26 +216,11 @@ class Piggy(PiggyParent):
         """Does a 360 scan and returns the number of obstacles it sees"""
         #scan area in front of robot
         self.scan()
-        
-        
         #Figure ot how many obstacles there were
         see_an_object = False
         count = 0
+
     def quick_check(self):
-
-        #print results
-        for angle in self.scan_data:
-            dist = self.scan_data[angle]
-            if dist < self.SAFE_DISTANCE and not see_an_object:
-                see_an_object = True
-                count += 1
-                print(" There's a body in the road")
-            elif dist > self.SAFE_DISTANCE and see_an_object:
-                    see_an_object = False
-                    print("All clear")
-            print("ANGLE: %d | DIST: %d" % (angle, dist))
-        print("\nI saw %d objects" % count)
-
         """Moves the servo to three angles and performs a distance check"""
         #loop three times and moce the servo 
         for ang in range(self.MIDPOINT - 100, self.MIDPOINT+101, 100):
