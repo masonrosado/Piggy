@@ -234,7 +234,7 @@ class Piggy(PiggyParent):
     def turn_until_clear(self):
         """ Rotate left until no obstacle is seen"""
         print("Rotating until lane is clear")
-        #make sure robot is looking straigh
+        #make sure robot is looking straight
         self.servo(self.MIDPOINT)
         while self.read_distance() < self.SAFE_DISTANCE:
             self.left(primary=40,counter=-40)
@@ -258,13 +258,13 @@ class Piggy(PiggyParent):
                 self.stop()
                 #backing up
                 self.back()
-                time.sleep(.75)
+                time.sleep(.5)
                 self.stop()
                 #self.turn_until_clear()
                 if 'l' in self.right_or_left():
-                    self.turn_by_deg(-45)
+                    self.turn_by_deg(-30)
                 else: 
-                    self.turn_by_deg(45)
+                    self.turn_by_deg(30)
             else:
                 self.fwd()
 
