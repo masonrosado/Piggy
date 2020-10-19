@@ -18,8 +18,8 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 83.5
+        self.LEFT_DEFAULT = 70
+        self.RIGHT_DEFAULT = 75
         self.SAFE_DISTANCE = 250
         self.CLOSE_DISTANCE = 125
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
@@ -223,7 +223,7 @@ class Piggy(PiggyParent):
     def quick_check(self):
         """Moves the servo to three angles and performs a distance check"""
         #loop three times and moce the servo 
-        for ang in range(self.MIDPOINT - 110, self.MIDPOINT+110, 100):
+        for ang in range(self.MIDPOINT - 115, self.MIDPOINT+115, 100):
             self.servo(ang)
             time.sleep(.05)
             if self.read_distance() < self.SAFE_DISTANCE:
