@@ -19,7 +19,7 @@ class Piggy(PiggyParent):
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 84
+        self.RIGHT_DEFAULT = 84.5
         self.SAFE_DISTANCE = 250
         self.CLOSE_DISTANCE = 125
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
@@ -266,7 +266,7 @@ class Piggy(PiggyParent):
                 else: 
                     self.turn_by_deg(30)
             else:
-                self.fwd(left=75, right=75)
+                self.fwd()
 
         # TODO: scan so we can decide left or right
         # TODO: average the right side of the scan dict
