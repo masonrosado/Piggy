@@ -251,7 +251,7 @@ class Piggy(PiggyParent):
         exit_ang = self.get_heading()
         #exit ang allows for turn to exit
         #self.turn_to_deg(exit_ang)
-
+        frustrated = 0
 
         while True:
             if not self.quick_check():
@@ -261,7 +261,9 @@ class Piggy(PiggyParent):
                 time.sleep(.5)
                 self.stop()
                 #self.turn_until_clear()
-                if 'l' in self.right_or_left():
+                if frustrated % 3 == 0:
+                    self.turn_to_deg(exit_ang)
+                elif 'l' in self.right_or_left():
                     self.turn_by_deg(-30)
                 else: 
                     self.turn_by_deg(30)
