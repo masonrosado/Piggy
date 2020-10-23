@@ -256,6 +256,7 @@ class Piggy(PiggyParent):
         while True:
             if not self.quick_check():
                 self.stop()
+                frustrated += 1
                 #backing up
                 self.back()
                 time.sleep(.5)
