@@ -261,7 +261,7 @@ class Piggy(PiggyParent):
                 time.sleep(.5)
                 self.stop()
                 #self.turn_until_clear()
-                elif frustrated % 3 == 0:
+                if frustrated % 3 == 0:
                     self.turn_to_deg(exit_ang)
                 elif 'l' in self.right_or_left():
                     self.turn_by_deg(-30)
